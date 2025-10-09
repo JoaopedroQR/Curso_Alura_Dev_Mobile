@@ -3,18 +3,29 @@
 // console.log('Valor do numero secreto: ' + secretNumber);
 // //Para criarmos variáveis e armazenar valor dentro utilizamos let
 // let chosenNumber;
-// chosenNumber = prompt('Escolha um numero entre 1 e 10'); // Pedir dado externo para o usuário
-// console.log('Valor do numero escolhido: ' + chosenNumber);
+// let tentativas = 1;
 
-// if (secretNumber == chosenNumber){ // condição
-//     console.log('Resultado da comparação:', chosenNumber == secretNumber)
-//     // console.log('Isso aí! Você descobriu o número secreto(5)'); ferramenta para desenvolvedor nao interage com o usuario
-//     // alert('Isso aí! Você descobriu o número secreto'); 
-//     // alert(`Isso aí! Você descobriu o número secreto ${secretNumber}`); // template strings
-//     alert('Isso aí! Você descobriu o número secreto ' + secretNumber); // Alternativa ao template strings
-// } else{
-//     alert('Você errou :( O numero secreto era ' + secretNumber + ' Voce chutou ' + chosenNumber);
+// //enquanto        diferente
+// while(chosenNumber != secretNumber){
+//     chosenNumber = prompt('Escolha um numero entre 1 e 10'); // Pedir dado externo para o usuário
+//     console.log('Valor do numero escolhido: ' + chosenNumber);
+//     if (secretNumber == chosenNumber){ // condição
+//         console.log('Resultado da comparação:', chosenNumber == secretNumber);
+//         // console.log('Isso aí! Você descobriu o número secreto(5)'); ferramenta para desenvolvedor nao interage com o usuario
+//         // alert('Isso aí! Você descobriu o número secreto'); 
+//         // alert(`Isso aí! Você descobriu o número secreto ${secretNumber}`); // template strings
+//         alert('Isso aí! Você descobriu o número secreto ' + secretNumber + ' com ' + tentativas + ' tentativas'); // Alternativa ao template strings
+//     } else{
+//         // tentativas = tentativas + 1; 
+//         tentativas++;
+//         if(secretNumber > chosenNumber){
+//             alert(`O número secreto é maior que ${chosenNumber}`);
+//         }else{
+//             alert(`O número secreto é menor que ${chosenNumber}`);
+//         }
+//     }
 // }
+
 
 
 
@@ -48,45 +59,82 @@
 //     alert('Não pode tirar a habilitação');
 // }
 
-// DESAFIOS 2
-//1. Pergunte ao usuário qual é o dia da semana. Se a resposta for "Sábado" ou "Domingo",
-//mostre "Bom fim de semana!". Caso contrário, mostre "Boa semana!".
-let weekDay = prompt('Digite o dia da semana:');
-if(weekDay === 'Sabado' || weekDay === 'Domingo'){
-    alert('Bom fim de semana!');
-}else{
-    alert('Boa semana!');
-}
+// // DESAFIOS 2
+// //1. Pergunte ao usuário qual é o dia da semana. Se a resposta for "Sábado" ou "Domingo",
+// //mostre "Bom fim de semana!". Caso contrário, mostre "Boa semana!".
+// let weekDay = prompt('Digite o dia da semana:');
+// if(weekDay === 'Sabado' || weekDay === 'Domingo'){
+//     alert('Bom fim de semana!');
+// }else{
+//     alert('Boa semana!');
+// }
 
-//2. Verifique se um número digitado pelo usuário é positivo ou negativo. Mostre um alerta informando.
-let number = prompt('Digite um número:');
-if(number > 0){
-    alert('Número positivo!!!');
-}else if(number < 0){
-    alert('Número negativo!!!');
-}else{
-    alert('Número nulo');
-}
+// //2. Verifique se um número digitado pelo usuário é positivo ou negativo. Mostre um alerta informando.
+// let number = prompt('Digite um número:');
+// if(number > 0){
+//     alert('Número positivo!!!');
+// }else if(number < 0){
+//     alert('Número negativo!!!');
+// }else{
+//     alert('Número nulo');
+// }
 
-//3. Crie um sistema de pontuação para um jogo. Se a pontuação for maior ou igual a 100, mostre "Parabéns, você venceu!".
-//Caso contrário, mostre "Tente novamente para ganhar.".
-let firstScore = prompt('Digite um numero de 0 a 100:');
-let firstScoreFormatado = parseInt(firstScore);
-let secondScore = prompt('Digite um numero de 0 a 100:');
-let secondScoreFormatado = parseInt(secondScore);
-console.log('Primeira pontuação:' + firstScore);
-console.log('Segunda pontuação:' + secondScore);
-console.log('Soma:' + (secondScore + firstScore));
+// //3. Crie um sistema de pontuação para um jogo. Se a pontuação for maior ou igual a 100, mostre "Parabéns, você venceu!".
+// //Caso contrário, mostre "Tente novamente para ganhar.".
+// let firstScore = prompt('Digite um numero de 0 a 100:');
+// let firstScoreFormatado = parseInt(firstScore);
+// let secondScore = prompt('Digite um numero de 0 a 100:');
+// let secondScoreFormatado = parseInt(secondScore);
+// console.log('Primeira pontuação:' + firstScore);
+// console.log('Segunda pontuação:' + secondScore);
+// console.log('Soma:' + (secondScore + firstScore));
 
-if((firstScore+secondScore) >= 100){
-    alert('Parabéns, você venceu!');
-}else{
-    alert('Tente novamente para ganhar.');
-}
-//4. Crie uma mensagem que informa o usuário sobre o saldo da conta, usando uma template string para
-//incluir o valor do saldo.
-let cash = 1000;
-alert(`Seu saldo é igual a R$${cash}.`);
-//5. Peça ao usuário para inserir seu nome usando prompt. Em seguida, mostre um alerta de boas-vindas usando esse nome.
-let person = prompt('Digite seu nome:');
-alert('Boas-vindas ' + person + '!!!');
+// if((firstScore+secondScore) >= 100){
+//     alert('Parabéns, você venceu!');
+// }else{
+//     alert('Tente novamente para ganhar.');
+// }
+// //4. Crie uma mensagem que informa o usuário sobre o saldo da conta, usando uma template string para
+// //incluir o valor do saldo.
+// let cash = 1000;
+// alert(`Seu saldo é igual a R$${cash}.`);
+// //5. Peça ao usuário para inserir seu nome usando prompt. Em seguida, mostre um alerta de boas-vindas usando esse nome.
+// let person = prompt('Digite seu nome:');
+// alert('Boas-vindas ' + person + '!!!');
+
+//DESAFIOS 3 
+// 1. Crie um contador que comece em 1 e vá até 10 usando um loop while. Mostre cada número.
+// let contador = 0;
+// while(contador <10){
+//     contador++;
+//     alert('Numero do contador: ' + contador);
+// }
+
+// // 2. Crie um contador que começa em 10 e vá até 0 usando um loop while. Mostre cada número.
+// let contador_decrementando = 10;
+// while(contador_decrementando >= 0){
+//     alert('Numero do contador: ' + contador_decrementando);
+//     contador_decrementando--;
+// }
+// 3.Crie um programa de contagem regressiva. Peça um número e conte deste número até 0,
+//usando um loop while no console do navegador.
+// let contador_decrementando = prompt('Digite um numero:');
+// while(contador_decrementando >= 0){
+//     console.log('Numero do contador: ' + contador_decrementando);
+//     contador_decrementando--;
+// }
+// // 4. Crie um programa de contagem progressiva. Peça um número e conte de 0 até esse número,
+// //usando um loop while no console do navegador.
+// let contador = prompt('Digite um numero:');
+// let cont = 0;
+// while(cont <= contador){
+//     console.log('Numero do contador: ' + cont);
+//     cont++;
+// }
+
+// OPERADORES LOGICOS
+// O operador AND, representado pelos símbolos "&&", é utilizado para combinar duas condições
+// e avaliar se ambas são verdadeiras.
+// O operador OR, representado pelos símbolos "||", é usado para verificar se pelo menos uma
+// das condições é verdadeira.
+// o operador NOT, representado pelos simbolos "!", é utilizado para inverter a veracidade da variável
