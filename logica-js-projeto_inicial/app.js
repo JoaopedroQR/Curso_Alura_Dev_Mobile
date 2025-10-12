@@ -1,5 +1,6 @@
 alert('Boas vindas ao jogo do número secreto');
-let secretNumber = parseInt(Math.random() * 100 + 1);
+let limite = prompt('Escolha o máximo número possível:')
+let secretNumber = parseInt(Math.random() * limite + 1);
 console.log('Valor do numero secreto: ' + secretNumber);
 //Para criarmos variáveis e armazenar valor dentro utilizamos let
 let chosenNumber;
@@ -7,7 +8,7 @@ let tentativas = 1;
 
 //enquanto        diferente
 while(chosenNumber != secretNumber){
-    chosenNumber = prompt('Escolha um numero entre 1 e 100'); // Pedir dado externo para o usuário
+    chosenNumber = prompt('Escolha um numero entre 1 e ' + limite); // Pedir dado externo para o usuário
     console.log('Valor do numero escolhido: ' + chosenNumber);
     if (secretNumber == chosenNumber){ // condição
         break;
@@ -21,13 +22,12 @@ while(chosenNumber != secretNumber){
         }
     }
 }
-
-// let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa'
-// console.log('Resultado da comparação:', chosenNumber == secretNumber);
-// // console.log('Isso aí! Você descobriu o número secreto(5)'); ferramenta para desenvolvedor nao interage com o usuario
-// // alert('Isso aí! Você descobriu o número secreto'); 
-// // alert(`Isso aí! Você descobriu o número secreto ${secretNumber}`); // template strings
-// alert('Isso aí! Você descobriu o número secreto ' + secretNumber + ' com ' + tentativas + ' ' + palavraTentativa); // Alternativa ao template strings
+let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa'
+console.log('Resultado da comparação:', chosenNumber == secretNumber);
+// console.log('Isso aí! Você descobriu o número secreto(5)'); ferramenta para desenvolvedor nao interage com o usuario
+// alert('Isso aí! Você descobriu o número secreto'); 
+// alert(`Isso aí! Você descobriu o número secreto ${secretNumber}`); // template strings
+alert('Isso aí! Você descobriu o número secreto ' + secretNumber + ' com ' + tentativas + ' ' + palavraTentativa); // Alternativa ao template strings
 
 
 // // DESAFIOS
