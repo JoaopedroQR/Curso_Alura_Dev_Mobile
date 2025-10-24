@@ -5,6 +5,8 @@
 // p = Parágrafo
 // let paragrafo = document.querySelector('p');
 // paragrafo.innerHTML = 'Escolha um número entre 1 e 10';
+let listaDeNumerosSorteados = [];
+let numeroLimite = 10;
 tentativas = 1;
 function verificarChute(){
     let chute = document.querySelector('input').value;
@@ -33,7 +35,18 @@ function limparCampo(){
 }
 
 function gerarNumeroAleatorio(){
-    return parseInt(Math.random() * 10 + 1);
+    let numeroEscolhido =  parseInt(Math.random() * numeroLimite + 1);
+    let quantidadeDeElementosNaLista = listaDeNumerosSorteados.length;
+    if(quantidadeDeElementosNaLista == numeroLimite){
+        listaDeNumerosSorteados = [];
+    }
+    if(listaDeNumerosSorteados.includes(numeroEscolhido)){
+        gerarNumeroAleatorio();
+    }else{
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        console.log(listaDeNumerosSorteados);
+        return numeroEscolhido;
+    }
 }
 
 function exibirTextoNaTela(tag, texto){
