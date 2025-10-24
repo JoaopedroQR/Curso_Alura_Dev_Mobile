@@ -63,65 +63,84 @@ function cliclarBotaoSoma(){
 // numeroElevado2 = quadrado(4);
 // console.log(numeroElevado2);
 
-// Desafio 3:
-// 1. Crie uma função que calcule o índice de massa corporal (IMC) de uma pessoa,
-// a partir de sua altura, em metros, e peso, em quilogramas, que serão recebidos como parâmetro.
-function imc(altura, peso){
-    return peso / (altura*altura)
-}
-meu_imc = imc(1.86, 93);
-console.log(meu_imc);
-// 2. Crie uma função que calcule o valor do fatorial de um número passado como parâmetro.
-function fatorial(numero){
-    if (numero == 1){
-        return 1;
-    }else{
-        return numero * fatorial(numero-1);
-    }
-}
-numero_fatorial = fatorial(5);
-console.log(numero_fatorial);
-// 3. Crie uma função que converte um valor em dólar, passado como parâmetro, e retorna o valor
-// equivalente em reais. Para isso, considere a cotação do dólar igual a R$4,80.
-function conversorDolarReal(valor){
-    return valor*4.80;
-}
-valorReal = conversorDolarReal(12.7);
-console.log(valorReal);
+// // Desafio 3:
+// // 1. Crie uma função que calcule o índice de massa corporal (IMC) de uma pessoa,
+// // a partir de sua altura, em metros, e peso, em quilogramas, que serão recebidos como parâmetro.
+// function imc(altura, peso){
+//     return peso / (altura*altura)
+// }
+// meu_imc = imc(1.86, 93);
+// console.log(meu_imc);
+// // 2. Crie uma função que calcule o valor do fatorial de um número passado como parâmetro.
+// function fatorial(numero){
+//     if (numero == 1){
+//         return 1;
+//     }else{
+//         return numero * fatorial(numero-1);
+//     }
+// }
+// numero_fatorial = fatorial(5);
+// console.log(numero_fatorial);
+// // 3. Crie uma função que converte um valor em dólar, passado como parâmetro, e retorna o valor
+// // equivalente em reais. Para isso, considere a cotação do dólar igual a R$4,80.
+// function conversorDolarReal(valor){
+//     return valor*4.80;
+// }
+// valorReal = conversorDolarReal(12.7);
+// console.log(valorReal);
 
-// 4. Crie uma função que mostre na tela a área e o perímetro de uma sala retangular, utilizando
-// altura e largura que serão dadas como parâmetro.
-function areaPerimetroSalaRetangular(altura, largura){
-    let area = altura * largura;
-    let perimetro = (altura*2) + (largura*2);
-    return [area, perimetro];
-}
-let area = 0.0;
-let perimetro = 0.0;
+// // 4. Crie uma função que mostre na tela a área e o perímetro de uma sala retangular, utilizando
+// // altura e largura que serão dadas como parâmetro.
+// function areaPerimetroSalaRetangular(altura, largura){
+//     let area = altura * largura;
+//     let perimetro = (altura*2) + (largura*2);
+//     return [area, perimetro];
+// }
+// let area = 0.0;
+// let perimetro = 0.0;
 
-[area, perimetro] = areaPerimetroSalaRetangular(10,20);
-console.log(area, perimetro);
+// [area, perimetro] = areaPerimetroSalaRetangular(10,20);
+// console.log(area, perimetro);
 
-// 5. Crie uma função que mostre na tela a área e o perímetro de uma sala circular, utilizando seu
-// raio que será fornecido como parâmetro. Considere Pi = 3,14.
-let pi = 3.14
-function areaPerimetroSalaCircular(raio){
-    let areaCircular = pi * raio * raio;
-    let perimetroCircular = 2*pi*raio;
-    return [areaCircular, perimetroCircular];
-}
-let areaCircular = 0.0;
-let perimetroCircular = 0.0;
+// // 5. Crie uma função que mostre na tela a área e o perímetro de uma sala circular, utilizando seu
+// // raio que será fornecido como parâmetro. Considere Pi = 3,14.
+// let pi = 3.14
+// function areaPerimetroSalaCircular(raio){
+//     let areaCircular = pi * raio * raio;
+//     let perimetroCircular = 2*pi*raio;
+//     return [areaCircular, perimetroCircular];
+// }
+// let areaCircular = 0.0;
+// let perimetroCircular = 0.0;
 
-[areaCircular, perimetroCircular] = areaPerimetroSalaCircular(10);
-console.log(areaCircular, perimetroCircular);
+// [areaCircular, perimetroCircular] = areaPerimetroSalaCircular(10);
+// console.log(areaCircular, perimetroCircular);
 
-// 6. Crie uma função que mostre na tela a tabuada de um número dado como parâmetro.
-function tabuada(numero){
-    let multiplicador = 10;
-    while(multiplicador>0){
-        console.log(`${numero} * ${multiplicador} = ${numero*multiplicador}`);
-        multiplicador--;
-    }
-}
-tabuada(9);
+// // 6. Crie uma função que mostre na tela a tabuada de um número dado como parâmetro.
+// function tabuada(numero){
+//     let multiplicador = 10;
+//     while(multiplicador>0){
+//         console.log(`${numero} * ${multiplicador} = ${numero*multiplicador}`);
+//         multiplicador--;
+//     }
+// }
+// tabuada(9);
+
+// Desafio 4:
+//1. Crie uma lista vazia, com o nome listaGenerica.
+let listaGenerica = []
+//2. Crie uma lista de linguagens de programação chamada
+// linguagensDeProgramacao com os seguintes elementos: 'JavaScript','C','C++', 'Kotlin' e 'Python'.
+let LinguagensDeProgramacao = ['JavaScript','C','C++', 'Kotlin', 'Python'];
+//3. Adicione à lista linguagensDeProgramacao os seguintes elementos: 'Java', 'Ruby' e 'GoLang'.
+LinguagensDeProgramacao.push('Java', 'Ruby', 'GoLang');
+//4.Crie uma lista com 3 nomes e exiba no console apenas o primeiro elemento.
+let nomes = ['joao','pedro', 'Queiroz'];
+ console.log(nomes[0]);
+ //5. Crie uma lista com 3 nomes e exiba no console apenas o segundo elemento.
+ let nomes2 = ['joao','pedro', 'Queiroz'];
+ console.log(nomes2[1]);
+ //6. Crie uma lista com 3 nomes e exiba no console apenas o último elemento.
+ let nomes3 = ['joao','pedro', 'Queiroz'];
+ console.log(nomes3[2]);
+ 
