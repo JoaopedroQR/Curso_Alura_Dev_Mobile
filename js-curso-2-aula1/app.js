@@ -6,7 +6,7 @@
 // let paragrafo = document.querySelector('p');
 // paragrafo.innerHTML = 'Escolha um número entre 1 e 10';
 let listaDeNumerosSorteados = [];
-let numeroLimite = 100;
+let numeroLimite = 10;
 tentativas = 1;
 function verificarChute(){
     let chute = document.querySelector('input').value;
