@@ -85,4 +85,6 @@ Ignorando arquivos:
     arquivo.txt
     *.css -> ignorar todos os arquivos .css
 
+Compartilhando código com Gist:
+
 https://www.alura.com.br/artigos/nova-exigencia-do-git-de-autenticacao-por-token-o-que-e-o-que-devo-fazer
