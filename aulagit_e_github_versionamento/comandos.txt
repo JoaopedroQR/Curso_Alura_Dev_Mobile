@@ -27,8 +27,44 @@ Alterar a URL de um repositório remoto:
     git remote set-url origin https://github.com/seu-usuario/seu-repositorio.git
 Alterar o apelido de um repositório remoto:
     git remote rename origin novo-origin
-Puxar todos os arquivos do repositorio remoto:
-    git pull origin main --allow-unrelated-histories
 
+Clonar um projeto:
+    - git clone url_do_projetos
+
+mostrar o estado do projeto:
+    - git status
+
+Alterando projetos e mandando commits:
+    - git commit - m "mensagem"
+    O Git oferece a possibilidade de adicionar mais de um autor a um commit.
+    Para isso, após escrever a mensagem do commit, pulamos duas linhas e usamos
+    a palavra-chave Co-authored-by eguido do nome e e-mail associado ao GitHub (entre < >)
+    de cada pessoa colaboradora.
+    $ git commit -m "Adicionar nova funcionalidade.
+    >
+    >
+    Co-authored-by: NOME <nome@email.com>
+    Co-authored-by: OUTRO-NOME <outro@email.com>"
+
+historico dos commits feitos no projeto:
+    - git log
+
+Letras e seus significados:
+M - Modified (Modificado) não foi salvo no github ainda
+U - Untracked (não rasterado) arquivo nao existia antigamente no projeto.
+
+Mandando arquivos de outro pc para o repositorio remoto
+    comando clone ja faz a ligação automaticamente do repositorio remoto e repositorio local
+    git remote -> mostra os repositorios remotos conectados.
+    git push origin main -> mandar os arquivos para o repositorio
+             nome    branch
+
+Adicionando colaboradores:
+    settings -> colaboradores -> add people -> passar username da pessoa
+    convite pendente -> view invite -> accept invite.
+
+Puxar todos os arquivos do repositorio remoto:
+    git pull origin main
+    git pull origin main --allow-unrelated-histories
 
 https://www.alura.com.br/artigos/nova-exigencia-do-git-de-autenticacao-por-token-o-que-e-o-que-devo-fazer
