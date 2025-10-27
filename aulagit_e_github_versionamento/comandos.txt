@@ -48,6 +48,7 @@ Alterando projetos e mandando commits:
 
 historico dos commits feitos no projeto:
     - git log
+    - Aperte Q para sair do log
 
 Letras e seus significados:
 M - Modified (Modificado) não foi salvo no github ainda
@@ -66,5 +67,14 @@ Adicionando colaboradores:
 Puxar todos os arquivos do repositorio remoto:
     git pull origin main
     git pull origin main --allow-unrelated-histories
+
+Desfazendo um commit:
+    git revert IDCOMMIT
+    - Cria um novo commit revertendo as ações do commit do IDCOMMIT
+
+Resetando um commit:
+    git reset --hard IDCOMMIT
+    - IDCOMMIT precisa ser 1 anterior ao que você quer apagar
+    - Apaga commit nao mais necessário
 
 https://www.alura.com.br/artigos/nova-exigencia-do-git-de-autenticacao-por-token-o-que-e-o-que-devo-fazer
