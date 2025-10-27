@@ -77,4 +77,12 @@ Resetando um commit:
     - IDCOMMIT precisa ser 1 anterior ao que você quer apagar
     - Apaga commit nao mais necessário
 
+Trocando nome de commit:
+    git commit --amend -m "mensagem"
+
+Ignorando arquivos:
+    .gitignore
+    arquivo.txt
+    *.css -> ignorar todos os arquivos .css
+
 https://www.alura.com.br/artigos/nova-exigencia-do-git-de-autenticacao-por-token-o-que-e-o-que-devo-fazer
