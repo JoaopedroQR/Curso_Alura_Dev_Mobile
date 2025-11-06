@@ -7,13 +7,17 @@ let precoTotal = 1400;
 function adicionar(){
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let produto = document.getElementById('produto').value;
-    let partes = produto.split('-', 2);
-    let nomeProduto = partes[0].trim();
-    let precoProduto = partes[1].trim();
+    let nomeProduto = produto.split('-')[0].trim();
+    let precoProduto = produto.split('R$')[1];
     let texto = '';
+
+    if(isNaN(quantidade)){
+        alert('Digite uma quantidade válida');
+        return;
+    }
     
     let tagListaProdutos = document.getElementById('lista-produtos');
-    texto = `<section class="carrinho__produtos__produto"><span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">${precoProduto}</span></section>\n`;
+    texto = `<section class="carrinho__produtos__produto"><span class="texto-azul">${quantidade}x</span> ${nomeProduto} <span class="texto-azul">R$${precoProduto}</span></section>\n`;
     listaProdutos.push(texto);
     
     let tamanho = listaProdutos.length;
@@ -27,13 +31,18 @@ function adicionar(){
     let quantidadeCampo = document.getElementById('quantidade');
     quantidadeCampo.value = '';
 
-    let precoAdicionar = document.getElementById('valor-total');
+    let valorFinal = document.getElementById('valor-total');
+    precoTotal += (precoProduto*quantidade);
+    valorFinal.textContent = `R$${precoTotal}`; 
 }
 
 function limpar(){
     let tagListaProdutos = document.getElementById('lista-produtos');
     let quantidade = document.getElementById('quantidade');
+    let valorFinal = document.getElementById('valor-total');
     tagListaProdutos.innerHTML = '';
     quantidade.value = '';
     listaProdutos = [];
+    valorFinal.textContent = 0;
+    precoTotal=0;
 }
