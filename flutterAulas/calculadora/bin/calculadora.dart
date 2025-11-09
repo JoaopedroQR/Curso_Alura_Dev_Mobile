@@ -1,33 +1,62 @@
-// import 'dart:io';
+import 'dart:io';
 
-// void main() {
-//   // var primeiroNumero = stdin.readLineSync(); -> por padrão é retornado string(texto[string?])
-//   // var segundoNumero = stdin.readLineSync(); -> por padrão gravado como texto
-//   double primeiroNumero = double.parse(stdin.readLineSync()!);
-//   double segundoNumero = double.parse(stdin.readLineSync()!);
-//   // String operacao = stdin.readLineSync()!;
-//   void soma(){
-//     // double terceiroNumero = 3; 
-//     print(primeiroNumero + segundoNumero);
-//   }
-//   // print(terceiroNumero); -> função filha tem acesso as variáveis da funçção pai, porém função pai não tem
-//   // acesso as variáveis da função filha. (escopo);
-//   void subtracao(){
-//     print(primeiroNumero - segundoNumero);
+void main() {
+  // var primeiroNumero = stdin.readLineSync(); -> por padrão é retornado string(texto[string?])
+  // var segundoNumero = stdin.readLineSync(); -> por padrão gravado como texto
+  print('Digite o primeiro número:');
+  double primeiroNumero = double.parse(stdin.readLineSync()!);
+  print('Digite a operação:');
+  String operacao = stdin.readLineSync()!;
+  print('Digite o Segundo número:');
+  double segundoNumero = double.parse(stdin.readLineSync()!);
+  // String operacao = stdin.readLineSync()!;
+  void soma(){
+    // double terceiroNumero = 3; 
+    print(primeiroNumero + segundoNumero);
+  }
+  // print(terceiroNumero); -> função filha tem acesso as variáveis da funçção pai, porém função pai não tem
+  // acesso as variáveis da função filha. (escopo);
+  void subtracao(){
+    print(primeiroNumero - segundoNumero);
 
-//   }
-//   void divisao(){
-//     print(primeiroNumero / segundoNumero);
+  }
+  void divisao(){
+    print(primeiroNumero / segundoNumero);
 
-//   }
-//   void multiplicacao(){
-//     print(primeiroNumero * segundoNumero);
-//   }
-//   soma();
-//   subtracao();
-//   divisao();
-//   multiplicacao();
-// }
+  }
+  void multiplicacao(){
+    print(primeiroNumero * segundoNumero);
+  }
+
+  //Lwgibilidade: IF E ELSE RUIM
+  // if(operacao == '+'){
+  //   soma();
+
+  // }else if(operacao == '-'){
+  //   subtracao();
+
+  // }else if(operacao == '*'){
+  //   multiplicacao();
+
+  // } else if(operacao == '/'){
+  //   divisao();
+  // }else{
+  //   print('Digite uma operação válida!!!');
+  // }
+  switch(operacao){
+    case '+':
+      soma();
+    case '-':
+      subtracao();
+    case '*':
+      multiplicacao();
+    case '/':
+      divisao();
+      break;
+    default:
+      print('Digite uma operação válida!');
+  }
+}
 
 // Exercícos:
 // 1) Calculando o dobro de um número
@@ -124,18 +153,17 @@
 
 //   print("Você resgatou $pontosRetirados pontos. Pontos restantes: $pontosRestantes.");
 // }
-
 // 8) Implementando um programa de cupons
-import 'dart:io';
+// import 'dart:io';
 
-void main(){
-  print('Bem-vindo ao mercado No Precinho! Digite o valor gasto:');
-  double valorGasto = double.parse(stdin.readLineSync()!);
+// void main(){
+//   print('Bem-vindo ao mercado No Precinho! Digite o valor gasto:');
+//   double valorGasto = double.parse(stdin.readLineSync()!);
 
-  int quantidadeCupons = valorGasto ~/ 50;
+//   int quantidadeCupons = valorGasto ~/ 50;
 
-  print('A quantidade de cupons que você ganhou foi: $quantidadeCupons');
-}
+//   print('A quantidade de cupons que você ganhou foi: $quantidadeCupons');
+// }
 
 // Null safety -> ferramenta do dart que ajuda na proteção de valores nulos;
 // tipos -> int(sem casas decimais); double(com casas decimais); bool(True ou False); String(texto); null; List;
