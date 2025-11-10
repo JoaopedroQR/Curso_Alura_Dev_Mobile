@@ -1,0 +1,2 @@
+Criar pasta -> cd pasta -> dart create (Nome do projeto) -> cd (Nome do projeto)
+-> dart run
