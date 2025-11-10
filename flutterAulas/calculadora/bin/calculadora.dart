@@ -3,12 +3,16 @@ import 'dart:io';
 void main() {
   // var primeiroNumero = stdin.readLineSync(); -> por padrão é retornado string(texto[string?])
   // var segundoNumero = stdin.readLineSync(); -> por padrão gravado como texto
-  print('Digite o primeiro número:');
-  double primeiroNumero = double.parse(stdin.readLineSync()!);
-  print('Digite a operação:');
-  String operacao = stdin.readLineSync()!;
-  print('Digite o Segundo número:');
-  double segundoNumero = double.parse(stdin.readLineSync()!);
+  // print('Digite o primeiro número:');
+  // double primeiroNumero = double.parse(stdin.readLineSync()!);
+  // print('Digite a operação:');
+  // String operacao = stdin.readLineSync()!;
+  // print('Digite o Segundo número:');
+  // double segundoNumero = double.parse(stdin.readLineSync()!);
+  // print('Digite o primeiro número:');
+  double primeiroNumero = 0;
+  String operacao = '';
+  double segundoNumero = 0;
   // String operacao = stdin.readLineSync()!;
   void soma(){
     // double terceiroNumero = 3; 
@@ -28,7 +32,22 @@ void main() {
     print(primeiroNumero * segundoNumero);
   }
 
-  //Lwgibilidade: IF E ELSE RUIM
+  void calcular(){
+    switch(operacao){
+      case '+':
+        soma();
+      case '-':
+        subtracao();
+      case '*':
+        multiplicacao();
+      case '/':
+        divisao();
+        break;
+      default:
+        print('Digite uma operação válida!');
+    }
+  }
+  //Legibilidade: IF E ELSE RUIM
   // if(operacao == '+'){
   //   soma();
 
@@ -43,19 +62,30 @@ void main() {
   // }else{
   //   print('Digite uma operação válida!!!');
   // }
-  switch(operacao){
-    case '+':
-      soma();
-    case '-':
-      subtracao();
-    case '*':
-      multiplicacao();
-    case '/':
-      divisao();
-      break;
-    default:
-      print('Digite uma operação válida!');
+
+  print('Digite o primeiro numero:');
+  String? entrada = stdin.readLineSync();
+  if(entrada != null){
+    if(entrada != ''){
+      primeiroNumero = double.parse(entrada);
+    }
   }
+
+  print('Digite a operação:');
+  entrada = stdin.readLineSync();
+  if(entrada != null){
+    operacao = entrada;
+  }
+
+  print('Digite o segundo numero:');
+  entrada = stdin.readLineSync();
+  if(entrada != null){
+    if(entrada != ''){
+      segundoNumero = double.parse(entrada);
+    }
+  }
+  print('O resultado da operação é:');
+  calcular();
 }
 
 // Exercícos:
