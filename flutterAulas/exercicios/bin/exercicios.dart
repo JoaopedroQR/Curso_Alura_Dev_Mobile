@@ -124,3 +124,165 @@
 //       print('Digite um pais válido');
 //   }
 // }
+
+
+// 1) Imprimindo números no terminal
+// void main(){
+//   for(var i=0; i<5; i++){
+//     print(i+1);
+//   }
+// }
+
+// 2) Mostrando nomes no terminal
+// void main(){
+//   List<String> nomes = <String>['joao','maria', 'Ana'];
+//   for(var nome in nomes){
+//     print('Nome : $nome');
+//   }
+// }
+
+// 3) Em busca da parada
+// void main(){
+//   String frase = 'Parou! Este código não continua';
+//   int i = 0;
+//   String letra = '';
+//   do{
+//     letra = frase[i];
+//     print(letra);
+//     i++;
+//   }while(letra != '!');
+// }
+
+// 1) Crie a lista para armazenar os nomes dos alunos e suas notas
+import 'dart:io';
+void main(){
+  List<List> alunos = <List>[[],[],[],[]];
+  menu(alunos);
+
+}
+
+void menu(List<List> alunos){
+  String? comando = '';
+
+  comando = getComando();
+
+  switch(comando){
+    case '1':
+      adicionarAlunos(alunos);
+      menu(alunos);
+    case '2':
+      if(alunos[0].length == alunos[1].length){
+        print('Numero de alunos insuficiente para se adicionar nova nota');
+        menu(alunos);
+      }
+      adicionarNotas(alunos);
+      menu(alunos);
+
+    case '3':
+      if(alunos[1].isEmpty){
+        print('Não existem notas para serem calculadas a média ainda.');
+        menu(alunos);
+      }
+      calcularMedias(alunos);
+      print('Médias calculadas!!');
+      menu(alunos);
+
+    case '4':
+      if(alunos[1].isEmpty){
+        print('Sem médias por enquanto, adicione as notas!');
+        menu(alunos);
+      }
+      mostrarLista(alunos);
+      menu(alunos);
+
+    case '5':
+      print('Saindo...');
+
+  }
+
+}
+
+void mostrarLista(List<List> alunos){
+  for(var i = 0; i<alunos[1].length; i++){
+    print('Aluno: ${alunos[0][i]}');
+    print('Nota1: ${alunos[1][i]}');
+    print('Nota2: ${alunos[2][i]}');
+    print('Média: ${alunos[3][i]}');
+    print('');
+  }
+}
+
+List<List> calcularMedias(List<List> alunos){
+  alunos[3] = [];
+  for(var i=0; i<alunos[1].length; i++){
+    alunos[3].add((alunos[1][i] + alunos[2][i])/2);
+  }
+
+  return alunos;
+}
+
+String getComando(){
+
+  List<String> comandos = <String>['1','2','3','4','5'];
+  String? comando = '';
+
+  print('');
+  print('Digite o que deseja fazer:');
+  print('[1] - Adicionar aluno');
+  print('[2] - Adicionar nota');
+  print('[3] - Média das notas');
+  print('[4] - Mostrar Lista');
+  print('[5] - Sair');
+  print('');
+
+  comando = stdin.readLineSync();
+  if(comando == null || !(comandos.contains(comando))){
+    print('Operação inválida!');
+    return getComando();
+  }
+
+  return comando;
+}
+
+List<List> adicionarNotas(List<List>alunos){
+
+  String? entrada = '';
+  int nota = 0;
+  int i = 0;
+
+  while(i<2){
+    print('Digite a nota ${i+1}:');
+    entrada = stdin.readLineSync();
+    if(entrada != null){
+      if(entrada != ''){
+        nota = int.parse(entrada);
+        alunos[i+1].add(nota);
+        i++;
+        continue;
+      }
+    }
+    print('Digite uma nota Válida!!');
+  }
+
+
+
+  return alunos;
+}
+
+List<List> adicionarAlunos(List<List> alunos){
+  
+  String? entrada = '';
+
+  print('Digite o nome do aluno:');
+
+  entrada = stdin.readLineSync();
+
+  if(entrada == null || entrada.isEmpty){
+    print('entrada inválida');
+    adicionarAlunos(alunos);
+  }else{
+    alunos[0].add(entrada);
+  }
+
+ return alunos; 
+}
