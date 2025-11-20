@@ -69,8 +69,8 @@ void menu(List<String> notas){
 void cabecalho(){
 
   // Cabeça
-  print("  (\_/)");
-  print("=(°w°)=\)");
+  print("  (\\_/)");
+  print("=(°w°)=\\)");
   print("   )   (  ");
   print("  (__ __)");
 
@@ -82,7 +82,7 @@ void cabecalho(){
 
   print("  _  _     _           ");
   print(" | \\| |___| |_ __ _ ___");
-  print(" | .\` / _ \\  _/ _\` (_-<");
+  print(" | .\\` / _ \\  _/ _\\` (_-<");
   print(" |_|\\_\\___/\\__\\__,_/__/");
   print("                       ");
 }
