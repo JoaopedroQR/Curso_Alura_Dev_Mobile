@@ -287,7 +287,7 @@ List<List> adicionarAlunos(List<List> alunos){
  return alunos; 
 }
 
-import 'dart:io';
+// import 'dart:io';
 // 1) Validação de categorias de produtos em um sistema de estoque
 // void main(){
 //   List<String> categorias = <String>["eletronicos", "alimentos", "vestuario", "livros"];
@@ -480,34 +480,34 @@ import 'dart:io';
 // }
 
 // 5) Validação de métodos de pagamento em uma plataforma de e-commerce
-void main(){
-  List<String> metodos = <String>["cartao", "boleto", "paypal", "pix"];
-  String metodo = '';
-  String? entrada = '';
+// void main(){
+//   List<String> metodos = <String>["cartao", "boleto", "paypal", "pix"];
+//   String metodo = '';
+//   String? entrada = '';
 
-  void getEntrada(){
-    print('Digite a categoria do produto${metodos.toString()}:');
-    entrada = stdin.readLineSync();
-    if(entrada != null){
-      if(metodos.contains(entrada)){
-        metodo = entrada!;
-      }else{
-        print('Categoria inválida!');
-        getEntrada();
-      }
-    }
-  }
+//   void getEntrada(){
+//     print('Digite a categoria do produto${metodos.toString()}:');
+//     entrada = stdin.readLineSync();
+//     if(entrada != null){
+//       if(metodos.contains(entrada)){
+//         metodo = entrada!;
+//       }else{
+//         print('Categoria inválida!');
+//         getEntrada();
+//       }
+//     }
+//   }
 
-  getEntrada();
+//   getEntrada();
 
-  switch(metodo){
-    case 'cartao':
-      print('Categoria válida: cartao');
-    case 'boleto':
-      print('Categoria válida: boleto');
-    case 'paypal ':
-      print('Categoria válida: paypal ');
-    case 'pix':
-      print('Categoria válida: pix');
-  }
-}
+//   switch(metodo){
+//     case 'cartao':
+//       print('Categoria válida: cartao');
+//     case 'boleto':
+//       print('Categoria válida: boleto');
+//     case 'paypal ':
+//       print('Categoria válida: paypal ');
+//     case 'pix':
+//       print('Categoria válida: pix');
+//   }
+// }
