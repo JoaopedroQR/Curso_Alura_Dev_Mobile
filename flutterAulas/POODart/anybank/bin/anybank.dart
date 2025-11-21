@@ -11,27 +11,29 @@ void main() {
   //List<String> contas = <String>["Matheus", "Roberta"];
   //List<double> saldos = <double>[1000,1000];
 
-  // Objeto - variável criada a partir de uma classe.
-  Conta contaJoao = Conta("João", 1000);
-  Conta contaRoberta = Conta("Roberta", 2000);
+  // // Objeto - variável criada a partir de uma classe.
+  // Conta contaJoao = Conta("João", 1000);
+  // Conta contaRoberta = Conta("Roberta", 2000);
   ContaCorrente contaChris = ContaCorrente('Chris', 4000);
   ContaPoupanca contaDenize = ContaPoupanca('Denize', 4000);
+  ContaEmpresa contaJoao = ContaEmpresa('João', 2000);
+  ContaInvestimento contaRoberta = ContaInvestimento('Roberta', 3000);
 
-  List<Conta> contas = <Conta>[contaJoao, contaRoberta];
+  // List<Conta> contas = <Conta>[contaJoao, contaRoberta];
 
   // print(contaJoao.titular);
   // print(contaJoao.saldo);
   // print(contaRoberta.titular);
   // print(contaRoberta.saldo);
   
-  for(Conta conta in contas){
-    conta.imprimirSaldo();
-  }
-  print('');
-  contaJoao.receber(500);
-  print('');
-  contaRoberta.receber(3000);
-  contaRoberta.enviar(6000);
+  // for(Conta conta in contas){
+  //   conta.imprimirSaldo();
+  // }
+  // print('');
+  // contaJoao.receber(500);
+  // print('');
+  // contaRoberta.receber(3000);
+  // contaRoberta.enviar(6000);
 
   contaChris.imprimirSaldo();
   contaDenize.imprimirSaldo();
@@ -40,5 +42,7 @@ void main() {
   contaDenize.enviar(4300);
   contaDenize.calcularRendimento();
 
+  contaRoberta.receber(500);
+  contaJoao.enviar(900);
 
 }

@@ -2,7 +2,7 @@
 // função construtura
 //classes são moldes
 // Métodos são funções que se encontram dentro de classes.
-class Conta{
+abstract class Conta{
   String titular;
   double _saldo;
   Conta(this.titular,this._saldo);
@@ -53,5 +53,56 @@ class ContaPoupanca extends Conta{
   void calcularRendimento(){
     _saldo += _saldo * rendimento;
     imprimirSaldo();
+  }
+}
+
+// Mixin
+
+mixin Imposto{
+  double taxa = 0.03;
+
+  double valorTaxado(double valor){
+    return  valor * taxa;
+  }
+}
+
+// extends : herança
+// implements : interface
+// with : mixin
+
+
+class ContaEmpresa extends Conta with Imposto{
+  ContaEmpresa(super.titular, super._saldo);
+
+  @override
+  void enviar(double valor) {
+    if(_saldo >= valor + valorTaxado(valor)){
+      _saldo -= valor + valorTaxado(valor);
+      imprimirSaldo();
+    }
+  }
+  @override
+  void receber(double valor) {
+    _saldo += valor - valorTaxado(valor);
+    imprimirSaldo();
+  }
+}
+
+class ContaInvestimento extends Conta with Imposto{
+  ContaInvestimento(super.titular, super._saldo);
+
+  @override
+  void enviar(double valor){
+    if(_saldo >= valor + valorTaxado(valor)){
+      _saldo -= valor + valorTaxado(valor);
+      imprimirSaldo();
+    }
+  }
+
+
+  @override
+  void receber(double valor){
+    _saldo += valor - valorTaxado(valor);
+    imprimirSaldo();  
   }
 }
