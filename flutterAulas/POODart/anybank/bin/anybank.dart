@@ -14,6 +14,8 @@ void main() {
   // Objeto - variável criada a partir de uma classe.
   Conta contaJoao = Conta("João", 1000);
   Conta contaRoberta = Conta("Roberta", 2000);
+  ContaCorrente contaChris = ContaCorrente('Chris', 4000);
+  ContaPoupanca contaDenize = ContaPoupanca('Denize', 4000);
 
   List<Conta> contas = <Conta>[contaJoao, contaRoberta];
 
@@ -30,6 +32,13 @@ void main() {
   print('');
   contaRoberta.receber(3000);
   contaRoberta.enviar(6000);
+
+  contaChris.imprimirSaldo();
+  contaDenize.imprimirSaldo();
+
+  contaChris.enviar(4300);
+  contaDenize.enviar(4300);
+  contaDenize.calcularRendimento();
 
 
 }

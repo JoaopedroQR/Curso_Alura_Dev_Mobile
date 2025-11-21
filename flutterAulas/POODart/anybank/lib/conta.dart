@@ -30,3 +30,28 @@ class Conta{
     return _saldo;
   }
 }
+
+class ContaCorrente extends Conta{
+  double empretimo =  300;
+  ContaCorrente(super.titular, super._saldo);
+  // sobresescrita de metodo;
+  @override
+  void enviar(double valor){
+    if(_saldo+empretimo >= valor){
+      print('Transferindo');
+      _saldo-=valor;
+      imprimirSaldo();
+    }else{
+      print('Valor elevado.');
+    }
+  }
+}
+
+class ContaPoupanca extends Conta{
+  double rendimento = 0.015;
+  ContaPoupanca(super.titular, super._saldo);
+  void calcularRendimento(){
+    _saldo += _saldo * rendimento;
+    imprimirSaldo();
+  }
+}
